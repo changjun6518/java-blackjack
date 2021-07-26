@@ -27,7 +27,7 @@ public class Deck {
 
     public void printDeck() {
         for (Card card : deck) {
-            System.out.println(card.cardPattern + " " + card.number);
+            System.out.println(card.getCardPattern() + " " + card.getNumber());
         }
     }
 }

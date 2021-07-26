@@ -6,4 +6,12 @@ public class Card {
         this.cardPattern = cardPattern;
         this.number = number;
     }
+
+    public String getCardPattern() {
+        return this.cardPattern;
+    }
+
+    public String getNumber() {
+        return this.number;
+    }
 }
