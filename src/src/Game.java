@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class Game {
     private User user;
     private User dealer;
-    private Deck deck = new Deck();
+    private final Deck deck = new Deck();
+
     public void start() {
 
     }
@@ -14,11 +15,18 @@ public class Game {
         this.dealer = new User("딜러");
     }
 
-    public void drawCard() {
-        Card card = deck.drawCard();
-        user.addCard(card);
-        Card card1 = deck.drawCard();
-        dealer.addCard(card);
+    public void firstDraw() {
+        dealer.addCard(deck.drawCard());
+        user.addCard(deck.drawCard());
+        dealer.addCard(deck.drawCard());
+        user.addCard(deck.drawCard());
     }
+
+    public void printUserAndDealerCard() {
+        dealer.printCards();
+        user.printCards();
+    }
+
+
 
 }

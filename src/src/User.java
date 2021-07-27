@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class User {
-    private String userName;
-    private ArrayList<Card> cards = new ArrayList<>();
+    private final String userName;
+    private final ArrayList<Card> cards = new ArrayList<>();
     public User(String userName) {
         this.userName = userName;
     }
@@ -12,8 +12,10 @@ public class User {
     }
 
     public void printCards() {
+        System.out.print(userName + " : ");
         for (Card card : cards) {
-            System.out.println(card.getCardPattern() + " " + card.getNumber());
+            System.out.print(card.getCardPattern() + " " + card.getNumber() + "    ");
         }
+        System.out.println();
     }
 }

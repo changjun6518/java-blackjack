@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import java.io.*;
+
 public class GameTest {
     @Test
     public void deck생성잘되는지확인() {
@@ -23,5 +25,20 @@ public class GameTest {
         user.addCard(new Card("스페이드", "A"));
 
         user.printCards();
+    }
+
+
+    @Test
+    public void userAndDealerCardCheck() {
+        String input = "chang";
+//        OutputStream out = new ByteArrayOutputStream();
+//        System.setOut(new PrintStream(out));
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+
+        Game game = new Game();
+        game.inputUser();
+        game.firstDraw();
+        game.printUserAndDealerCard();
     }
 }
