@@ -7,7 +7,7 @@ public class User {
         this.userName = userName;
     }
 
-    public void addCard(Card card) {
+    public void drawCard(Card card) {
         cards.add(card);
     }
 
@@ -17,5 +17,9 @@ public class User {
             System.out.print(card.getCardPattern() + " " + card.getNumber() + "    ");
         }
         System.out.println();
+    }
+
+    public String getUserName() {
+        return userName;
     }
 }

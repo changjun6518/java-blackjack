@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class GameTest {
     @Test
@@ -20,9 +21,9 @@ public class GameTest {
     public void user에카드저장되는지확인() {
         User user = new User("chang");
 
-        user.addCard(new Card("다이아몬드", "K"));
-        user.addCard(new Card("클로버", "10"));
-        user.addCard(new Card("스페이드", "A"));
+        user.drawCard(new Card("다이아몬드", "K"));
+        user.drawCard(new Card("클로버", "10"));
+        user.drawCard(new Card("스페이드", "A"));
 
         user.printCards();
     }
@@ -30,15 +31,15 @@ public class GameTest {
 
     @Test
     public void userAndDealerCardCheck() {
-        String input = "chang";
+        String input = "chang y";
 //        OutputStream out = new ByteArrayOutputStream();
 //        System.setOut(new PrintStream(out));
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
+
+        Scanner scanner = new Scanner(System.in);
         Game game = new Game();
-        game.inputUser();
-        game.firstDraw();
-        game.printUserAndDealerCard();
+        game.start(scanner);
     }
 }
