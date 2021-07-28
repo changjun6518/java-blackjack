@@ -1,3 +1,6 @@
+import domain.Card;
+import domain.Deck;
+import domain.Player;
 import org.junit.Test;
 
 import java.io.*;

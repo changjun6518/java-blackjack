@@ -1,5 +1,8 @@
+package domain;
+
+import domain.Card;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Deck {

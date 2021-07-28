@@ -1,3 +1,7 @@
+package domain;
+
+import domain.Card;
+
 import java.util.ArrayList;
 
 public class Player {
@@ -40,5 +44,9 @@ public class Player {
 
     public String getUserName() {
         return userName;
+    }
+
+    public Integer getScore() {
+        return score;
     }
 }

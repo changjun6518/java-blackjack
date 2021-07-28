@@ -1,8 +1,14 @@
+import domain.Dealer;
+import domain.Deck;
+import domain.GameResult;
+import domain.Player;
+
 import java.util.Scanner;
 
 public class Game {
     private Player player;
     private Dealer dealer;
+    private Player winner;
     private final Deck deck = new Deck();
 
     public void start(Scanner scanner) {
@@ -14,6 +20,7 @@ public class Game {
         checkDealerScoreLessThanSixTeen();
         sumCardScore();
         printScore();
+        printWinner();
     }
 
     public void inputUser(Scanner scanner) {
@@ -60,4 +67,8 @@ public class Game {
         player.printScore();
     }
 
+    public void printWinner() {
+        GameResult gameResult = new GameResult(dealer, player);
+        gameResult.printWinner();
+    }
 }
