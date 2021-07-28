@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Game {
-    private User user;
-    private User dealer;
+    private Player player;
+    private Dealer dealer;
     private final Deck deck = new Deck();
 
     public void start(Scanner scanner) {
@@ -11,45 +11,53 @@ public class Game {
         printUserAndDealerCard();
         extraDraw(scanner);
         printUserAndDealerCard();
+        checkDealerScoreLessThanSixTeen();
         sumCardScore();
         printScore();
     }
 
     public void inputUser(Scanner scanner) {
-        this.user = new User(scanner.next());
-        this.dealer = new User("딜러");
+        this.player = new Player(scanner.next());
+        this.dealer = new Dealer("딜러");
     }
 
     public void firstDraw() {
-        System.out.println("딜러와 "+user.getUserName() + "에게 카드 2장 씩을 나눴습니다");
+        System.out.println("딜러와 "+ player.getUserName() + "에게 카드 2장 씩을 나눴습니다");
         dealer.drawCard(deck.drawCard());
-        user.drawCard(deck.drawCard());
+        player.drawCard(deck.drawCard());
         dealer.drawCard(deck.drawCard());
-        user.drawCard(deck.drawCard());
+        player.drawCard(deck.drawCard());
     }
 
     public void printUserAndDealerCard() {
         dealer.printCards();
-        user.printCards();
+        player.printCards();
     }
 
     public void extraDraw(Scanner scanner) {
-        System.out.println(user.getUserName() + "는 한장의 카드를 더 받겠습니까? (y or n)");
+        System.out.println(player.getUserName() + "는 한장의 카드를 더 받겠습니까? (y or n)");
         String userAnswer = scanner.next();
         if (userAnswer.equals("y")) {
-            user.drawCard(deck.drawCard());
+            player.drawCard(deck.drawCard());
+        }
+    }
+
+    public void checkDealerScoreLessThanSixTeen() {
+        if (dealer.checkScoreLessThanBaseScore()) {
+            System.out.println("딜러의 점수 합산이 16점이하라 한장의 카드를 더 받습니다");
+            dealer.drawCard(deck.drawCard());
         }
     }
 
     public void sumCardScore() {
         dealer.sumCardScore();
-        user.sumCardScore();
+        player.sumCardScore();
     }
 
 
     public void printScore() {
         dealer.printScore();
-        user.printScore();
+        player.printScore();
     }
 
 }

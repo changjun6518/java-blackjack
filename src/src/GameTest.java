@@ -19,13 +19,13 @@ public class GameTest {
 
     @Test
     public void user에카드저장되는지확인() {
-        User user = new User("chang");
+        Player player = new Player("chang");
 
-        user.drawCard(new Card("다이아몬드", "K"));
-        user.drawCard(new Card("클로버", "10"));
-        user.drawCard(new Card("스페이드", "A"));
+        player.drawCard(new Card("다이아몬드", "K"));
+        player.drawCard(new Card("클로버", "10"));
+        player.drawCard(new Card("스페이드", "A"));
 
-        user.printCards();
+        player.printCards();
     }
 
 

@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
-public class User {
+public class Player {
     private final String userName;
     private final ArrayList<Card> cards = new ArrayList<>();
     private Integer score = 0;
-    public User(String userName) {
+    public Player(String userName) {
         this.userName = userName;
     }
 
@@ -29,11 +29,12 @@ public class User {
     }
 
 
-
-    public void sumCardScore() {
+    public Integer sumCardScore() {
+        score = 0;
         for (Card card : cards) {
             this.score += card.getScoreByCard();
         }
+        return score;
     }
 
 
