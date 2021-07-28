@@ -14,4 +14,18 @@ public class Card {
     public String getNumber() {
         return this.number;
     }
+
+    public int getScoreByCard() {
+        if (number == "A") {
+            return 1;
+        } else if (number == "J") {
+            return 11;
+        } else if (number == "Q") {
+            return 12;
+        } else if (number == "K") {
+            return 13;
+        } else {
+            return Integer.parseInt(number);
+        }
+    }
 }

@@ -11,6 +11,8 @@ public class Game {
         printUserAndDealerCard();
         extraDraw(scanner);
         printUserAndDealerCard();
+        sumCardScore();
+        printScore();
     }
 
     public void inputUser(Scanner scanner) {
@@ -37,6 +39,17 @@ public class Game {
         if (userAnswer.equals("y")) {
             user.drawCard(deck.drawCard());
         }
+    }
+
+    public void sumCardScore() {
+        dealer.sumCardScore();
+        user.sumCardScore();
+    }
+
+
+    public void printScore() {
+        dealer.printScore();
+        user.printScore();
     }
 
 }
