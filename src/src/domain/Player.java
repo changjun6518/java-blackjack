@@ -32,7 +32,6 @@ public class Player {
         System.out.println();
     }
 
-
     public Integer sumCardScore() {
         score = 0;
         for (Card card : cards) {
