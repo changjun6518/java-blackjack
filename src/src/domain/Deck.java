@@ -9,7 +9,7 @@ public class Deck {
     private final ArrayList<Card> deck = new ArrayList<>();
     private ArrayList<Integer> duplicatedNumber = new ArrayList<>();
     private static final Integer CARD_MIN_NUMBER = 1;
-    private static final Integer CARD_MAX_NUMBER = 51;
+    private static final Integer CARD_MAX_NUMBER = 10;
     public Deck() {
         createDeck();
     }
@@ -33,6 +33,9 @@ public class Deck {
 
     public Card drawCard() {
         int randomNum = ThreadLocalRandom.current().nextInt(CARD_MIN_NUMBER, CARD_MAX_NUMBER) + CARD_MIN_NUMBER;
+        while (duplicatedNumber.contains(randomNum)) {
+            randomNum = ThreadLocalRandom.current().nextInt(CARD_MIN_NUMBER, CARD_MAX_NUMBER) + CARD_MIN_NUMBER;
+        }
         duplicatedNumber.add(randomNum);
         // 중복 검증 필요
         return deck.get(randomNum);
