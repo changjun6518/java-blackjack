@@ -9,8 +9,8 @@ public class Card {
         this.number = number;
     }
 
-    public CardPattern getCardPattern() {
-        return this.cardPattern;
+    public String getCardPattern() {
+        return this.cardPattern.cardPattern;
     }
 
     public CardNumber getNumber() {

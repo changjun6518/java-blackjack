@@ -1,6 +1,8 @@
+package game;
+
 import player.Dealer;
 import card.Deck;
-import card.GameResult;
+import game.GameResult;
 import player.Player;
 
 import java.util.Scanner;

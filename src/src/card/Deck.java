@@ -1,12 +1,9 @@
 package card;
 
-import util.DrawedCard;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Deck {
     private final ArrayList<Card> deck;

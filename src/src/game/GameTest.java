@@ -1,3 +1,5 @@
+package game;
+
 import card.Card;
 import card.CardNumber;
 import card.CardPattern;
@@ -26,7 +28,7 @@ public class GameTest {
     public void user에카드저장되는지확인() {
         Player player = new Player("chang");
 
-        player.drawCard(new Card(CardPattern.SPADE, CardNumber.KING));
+        player.drawCard(new Card(CardPattern.SPADE, CardNumber.ACE));
 
         player.printCards();
     }
