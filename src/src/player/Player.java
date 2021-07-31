@@ -1,6 +1,6 @@
-package domain;
+package player;
 
-import domain.Card;
+import card.Card;
 
 import java.util.ArrayList;
 
@@ -35,7 +35,7 @@ public class Player {
     public Integer sumCardScore() {
         score = 0;
         for (Card card : cards) {
-            this.score += card.getScoreByCard();
+            this.score += card.getCardNumber();
         }
         return score;
     }

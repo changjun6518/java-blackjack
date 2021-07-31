@@ -1,14 +1,13 @@
-import domain.Dealer;
-import domain.Deck;
-import domain.GameResult;
-import domain.Player;
+import player.Dealer;
+import card.Deck;
+import card.GameResult;
+import player.Player;
 
 import java.util.Scanner;
 
 public class Game {
     private Player player;
     private Dealer dealer;
-    private Player winner;
     private final Deck deck = new Deck();
 
     public void start(Scanner scanner) {
@@ -24,6 +23,7 @@ public class Game {
     }
 
     public void inputUser(Scanner scanner) {
+        System.out.println("player 이름을 입력하세요");
         this.player = new Player(scanner.next());
         this.dealer = new Dealer("딜러");
     }

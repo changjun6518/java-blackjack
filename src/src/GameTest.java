@@ -1,6 +1,8 @@
-import domain.Card;
-import domain.Deck;
-import domain.Player;
+import card.Card;
+import card.CardNumber;
+import card.CardPattern;
+import card.Deck;
+import player.Player;
 import org.junit.Test;
 
 import java.io.*;
@@ -24,9 +26,7 @@ public class GameTest {
     public void user에카드저장되는지확인() {
         Player player = new Player("chang");
 
-        player.drawCard(new Card("다이아몬드", "K"));
-        player.drawCard(new Card("클로버", "10"));
-        player.drawCard(new Card("스페이드", "A"));
+        player.drawCard(new Card(CardPattern.SPADE, CardNumber.KING));
 
         player.printCards();
     }
@@ -44,5 +44,15 @@ public class GameTest {
         Scanner scanner = new Scanner(System.in);
         Game game = new Game();
         game.start(scanner);
+    }
+
+    @Test
+    public void ENUM_TEST() {
+        for (CardNumber value : CardNumber.values()) {
+            System.out.println(value);
+        }
+        for (CardPattern value : CardPattern.values()) {
+            System.out.println(value);
+        }
     }
 }

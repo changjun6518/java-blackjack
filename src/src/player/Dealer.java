@@ -1,4 +1,6 @@
-package domain;
+package player;
+
+import player.Player;
 
 public class Dealer extends Player {
     private static final Integer BASE_SCORE = 16;

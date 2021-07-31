@@ -1,4 +1,6 @@
-package domain;
+package card;
+
+import player.Player;
 
 public class GameResult {
     private Player winner;
