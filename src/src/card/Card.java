@@ -13,11 +13,8 @@ public class Card {
         return this.cardPattern.cardPattern;
     }
 
-    public CardNumber getNumber() {
-        return this.number;
+    public int getNumber() {
+        return number.cardNumber;
     }
 
-    public int getCardNumber() {
-        return number.getCardNumber();
-    }
 }

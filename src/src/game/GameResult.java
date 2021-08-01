@@ -19,9 +19,9 @@ public class GameResult {
     public Player decideWinner(Player playerA, Player playerB) {
         if (playerA.sumCardScore() < playerB.sumCardScore()) {
             return winner = playerB;
-        } else {
-            return winner = playerA;
         }
+        return winner = playerA;
+
     }
 
     public boolean checkScoreLessThan21(Player player) {

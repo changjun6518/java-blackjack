@@ -23,6 +23,7 @@ public class Player {
         }
         System.out.println();
     }
+
     public void printScore() {
         System.out.print(userName + " : ");
         for (Card card : cards) {
@@ -35,7 +36,7 @@ public class Player {
     public Integer sumCardScore() {
         score = 0;
         for (Card card : cards) {
-            this.score += card.getCardNumber();
+            this.score += card.getNumber();
         }
         return score;
     }
