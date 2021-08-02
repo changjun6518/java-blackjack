@@ -25,7 +25,7 @@ public class Game {
     }
 
     public void inputUser(Scanner scanner) {
-        System.out.println("player 이름을 입력하세요");
+        System.out.println("player들의 이름을 입력하세요");
         this.player = new Player(scanner.next());
         this.dealer = new Dealer("딜러");
     }
