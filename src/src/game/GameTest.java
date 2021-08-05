@@ -30,7 +30,7 @@ public class GameTest {
 
         player.drawCard(new Card(CardPattern.SPADE, CardNumber.ACE));
 
-        player.printCards();
+        player.openCards();
     }
 
 

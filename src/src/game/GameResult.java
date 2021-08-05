@@ -1,27 +1,26 @@
 package game;
 
 import player.Player;
+import player.Players;
+
+import java.util.ArrayList;
 
 public class GameResult {
-    private Player winner;
+    private ArrayList<Player> winners;
     private static final int LIMIT_SCORE = 21;
 
-    public GameResult(Player playerA, Player playerB) {
-        if (checkScoreLessThan21(playerA) && checkScoreLessThan21(playerB)) {
-            winner = decideWinner(playerA, playerB);
-        } else if (checkScoreLessThan21(playerA)) {
-            winner = playerA;
-        } else if (checkScoreLessThan21(playerB)) {
-            winner = playerB;
-        }
+    public GameResult() {
+        winners = new ArrayList<>();
     }
 
-    public Player decideWinner(Player playerA, Player playerB) {
-        if (playerA.sumCardScore() < playerB.sumCardScore()) {
-            return winner = playerB;
+    public void decideWinnerByDealer(Player player, Player dealer) {
+        if (!checkScoreLessThan21(dealer)) {
+            winners.add(player);
+            return;
         }
-        return winner = playerA;
-
+        if (player.sumCardScore() > dealer.sumCardScore()) {
+            winners.add(player);
+        }
     }
 
     public boolean checkScoreLessThan21(Player player) {
@@ -29,10 +28,12 @@ public class GameResult {
     }
 
     public void printWinner() {
-        if (winner == null) {
+        if (winners.isEmpty()) {
             System.out.println("승자가 없습니다...!");
             return;
         }
-        System.out.println("승자는 " + winner.getUserName() + " 입니다!");
+        for (Player winner : winners) {
+            System.out.println("승자는 " + winner.getUserName() + " 입니다!");
+        }
     }
 }

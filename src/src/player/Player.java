@@ -5,9 +5,9 @@ import card.Card;
 import java.util.ArrayList;
 
 public class Player {
-    private final String userName;
-    private final ArrayList<Card> cards = new ArrayList<>();
-    private Integer score = 0;
+    protected final String userName;
+    protected final ArrayList<Card> cards = new ArrayList<>();
+    protected Integer score = 0;
     public Player(String userName) {
         this.userName = userName;
     }
@@ -16,7 +16,7 @@ public class Player {
         cards.add(card);
     }
 
-    public void printCards() {
+    public void openCards() {
         System.out.print(userName + " : ");
         for (Card card : cards) {
             System.out.print(card.getCardPattern() + " " + card.getNumber() + "    ");
