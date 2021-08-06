@@ -39,7 +39,9 @@ public class Players {
 
                 System.out.println(player.getUserName() + "는 한장의 카드를 더 받겠습니까? (y or n)");
                 String userAnswer = scanner.next();
-                
+                if (!checkYesNo(userAnswer)) {
+                    continue;
+                }
                 // y or n 체크 필요
                 if (userAnswer.equals("n")) {
                     break;
@@ -71,5 +73,15 @@ public class Players {
 
     public void printWinner() {
         gameResult.printWinner();
+    }
+
+
+    private boolean checkYesNo(String userAnswer) {
+        //            throw new IllegalArgumentException("y 또는 n 을 입력하세요!");
+        if (!userAnswer.equals("y") && !userAnswer.equals("n")) {
+            System.out.println("y or n 으로 입력해주세요!");
+            return false;
+        }
+        return true;
     }
 }
