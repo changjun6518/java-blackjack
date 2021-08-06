@@ -9,10 +9,14 @@ import player.Players;
 import java.util.Scanner;
 
 public class Game {
-    private Player player;
     private Dealer dealer;
-    private final Players players = new Players();
-    private final Deck deck = new Deck();
+    private final Players players;
+    private final Deck deck;
+
+    public Game(Players players, Deck deck) {
+        this.players = players;
+        this.deck = deck;
+    }
 
     public void start(Scanner scanner) {
         inputUser(scanner);

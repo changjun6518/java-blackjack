@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Players {
-    private ArrayList<Player> players;
-    private GameResult gameResult;
-    public Players() {
+    private final ArrayList<Player> players;
+    private final GameResult gameResult;
+    public Players(GameResult gameResult) {
         players = new ArrayList<>();
-        gameResult = new GameResult();
+        this.gameResult = gameResult;
     }
 
     public void inputPlayers(Scanner scanner, int playerCount) {

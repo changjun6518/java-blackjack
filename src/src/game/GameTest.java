@@ -43,9 +43,9 @@ public class GameTest {
         System.setIn(in);
 
 
-        Scanner scanner = new Scanner(System.in);
-        Game game = new Game();
-        game.start(scanner);
+//        Scanner scanner = new Scanner(System.in);
+//        Game game = new Game();
+//        game.start(scanner);
     }
 
     @Test
