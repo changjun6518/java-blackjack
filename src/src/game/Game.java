@@ -33,10 +33,13 @@ public class Game {
 
     public void inputUser(Scanner scanner) {
         int playerCount;
-        do {
+        while (true) {
             System.out.println("player 인원 수를 입력하세요");
             playerCount = scanner.nextInt();
-        } while (!checkPlayerCount(playerCount));
+            if (checkPlayerCount(playerCount)) {
+                break;
+            }
+        }
 
         System.out.println("player의 이름을 입력하세요");
         players.inputPlayers(scanner, playerCount);
