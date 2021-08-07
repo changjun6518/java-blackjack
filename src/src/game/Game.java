@@ -12,7 +12,7 @@ public class Game {
     private Dealer dealer;
     private final Players players;
     private final Deck deck;
-
+    private static final int PLAYER_COUNT = 6;
     public Game(Players players, Deck deck) {
         this.players = players;
         this.deck = deck;
@@ -32,14 +32,24 @@ public class Game {
     }
 
     public void inputUser(Scanner scanner) {
-        System.out.println("player 인원 수를 입력하세요");
-        int playerCount = scanner.nextInt();
+        int playerCount;
+        do {
+            System.out.println("player 인원 수를 입력하세요");
+            playerCount = scanner.nextInt();
+        } while (!checkPlayerCount(playerCount));
 
         System.out.println("player의 이름을 입력하세요");
         players.inputPlayers(scanner, playerCount);
 
-//        this.player = new Player(scanner.next());
         this.dealer = new Dealer("딜러");
+    }
+
+    private boolean checkPlayerCount(int playerCount) {
+        if (playerCount > PLAYER_COUNT) {
+            System.out.println("플레이어는 최대 6명까지 입니다!");
+            return false;
+        }
+        return true;
     }
 
     public void firstDraw() {

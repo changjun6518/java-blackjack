@@ -3,6 +3,7 @@ package player;
 import card.Card;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Player {
     protected final String userName;
@@ -35,8 +36,10 @@ public class Player {
 
     public Integer sumCardScore() {
         score = 0;
+        Collections.sort(cards);
+
         for (Card card : cards) {
-            this.score += card.getNumber();
+            this.score += card.getNumber(score);
         }
         return score;
     }

@@ -15,10 +15,17 @@ public class Players {
     }
 
     public void inputPlayers(Scanner scanner, int playerCount) {
-        for (int i = 0; i < playerCount; i++) {
-            players.add(new Player(scanner.next()));
+        int check = 0;
+        while (check < playerCount) {
+            String userName = scanner.next();
+            if (!checkPlayerNameDuplicate(userName)) {
+                continue;
+            }
+            players.add(new Player(userName));
+            check++;
         }
     }
+
 
     public void drawCard(Deck deck) {
         for (Player player : players) {
@@ -42,7 +49,6 @@ public class Players {
                 if (!checkYesNo(userAnswer)) {
                     continue;
                 }
-                // y or n 체크 필요
                 if (userAnswer.equals("n")) {
                     break;
                 }
@@ -81,6 +87,16 @@ public class Players {
         if (!userAnswer.equals("y") && !userAnswer.equals("n")) {
             System.out.println("y or n 으로 입력해주세요!");
             return false;
+        }
+        return true;
+    }
+
+    private boolean checkPlayerNameDuplicate(String userName) {
+        for (Player player : players) {
+            if (player.userName.equals(userName)) {
+                System.out.println("이름이 중복되었습니다! 다시입력해주세요!");
+                return false;
+            }
         }
         return true;
     }
