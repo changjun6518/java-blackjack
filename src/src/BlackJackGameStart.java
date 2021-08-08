@@ -31,5 +31,7 @@ public class BlackJackGameStart {
             }
             gameFlow.moreGame(scanner, players);
         }
+
+        System.out.println("게임 종료!");
     }
 }
