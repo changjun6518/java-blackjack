@@ -44,6 +44,9 @@ public class Player {
         return score;
     }
 
+    public void initializeCard() {
+        cards.removeAll(cards);
+    }
 
     public String getUserName() {
         return userName;

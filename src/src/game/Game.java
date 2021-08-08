@@ -2,8 +2,6 @@ package game;
 
 import player.Dealer;
 import card.Deck;
-import game.GameResult;
-import player.Player;
 import player.Players;
 
 import java.util.Scanner;
@@ -16,19 +14,6 @@ public class Game {
     public Game(Players players, Deck deck) {
         this.players = players;
         this.deck = deck;
-    }
-
-    public void start(Scanner scanner) {
-        inputUser(scanner);
-        firstDraw();
-        openPlayersCard();
-        openDealerOneCard();
-        extraDraw(scanner);
-        checkDealerScoreLessThanSixTeen();
-        sumCardScore();
-        printScore();
-        choiceWinner();
-        printWinner();
     }
 
     public void inputUser(Scanner scanner) {

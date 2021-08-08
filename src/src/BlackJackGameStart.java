@@ -1,5 +1,6 @@
 import card.Deck;
 import game.Game;
+import game.GameFlow;
 import game.GameResult;
 import player.Players;
 
@@ -16,8 +17,19 @@ public class BlackJackGameStart {
         GameResult gameResult = new GameResult();
         Players players = new Players(gameResult);
         Deck deck = new Deck();
-
         Game game = new Game(players, deck);
-        game.start(scanner);
+        GameFlow gameFlow = new GameFlow(game);
+
+
+        gameFlow.start(scanner);
+
+        while (true) {
+            System.out.println("게임을 계속 진행하시겠습니까? y or n");
+            String userAnswer = scanner.next();
+            if (userAnswer.equals("n")) {
+                break;
+            }
+            gameFlow.moreGame(scanner, players);
+        }
     }
 }

@@ -81,6 +81,11 @@ public class Players {
         gameResult.printWinner();
     }
 
+    public void initializeCard() {
+        for (Player player : players) {
+            player.initializeCard();
+        }
+    }
 
     private boolean checkYesNo(String userAnswer) {
         //            throw new IllegalArgumentException("y 또는 n 을 입력하세요!");
